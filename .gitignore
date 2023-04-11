@@ -40,3 +40,5 @@ $RECYCLE.BIN/
 .env
 
 server.crt
+
+jwtprivate.key
