@@ -23,6 +23,7 @@ yarn-error.log*
 
 # Dependency directories
 node_modules/
+keys/
 
 # Eslint cache
 .eslintcache
@@ -39,6 +40,6 @@ $RECYCLE.BIN/
 # Local environment variables
 .env
 
-server.crt
+server.key
 
 jwtprivate.key
