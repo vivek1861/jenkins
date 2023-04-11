@@ -52,6 +52,7 @@ public with sharing class BankBotCaseGenerator {
 
 
                 }
+                
 
                 when 3{
                     newCase.Origin = 'BOT';
