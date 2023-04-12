@@ -72,10 +72,6 @@ workflows:
   validate:
     jobs:
       - run-tests
-      
-            branches:
-              only:
-                - main
       - code-review:
           requires:
             - run-tests
