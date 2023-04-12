@@ -72,7 +72,7 @@ workflows:
   validate:
     jobs:
       - run-tests
-      filters:
+      
             branches:
               only:
                 - main
