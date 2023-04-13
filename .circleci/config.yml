@@ -73,13 +73,13 @@ workflows:
   validate:
     jobs:
       - run-tests
-      - filters:
-            branches:
-              only: 
-              -main
+      
       - code-review:
           requires:
             - run-tests
       - deploy-code:
           requires:
             - code-review
+           filters:
+            branches:
+              only: main
