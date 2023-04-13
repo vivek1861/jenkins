@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   run-tests:
     docker:
-      - image: circleci/node:latest
+      - image: alpine:3.15
     steps:
       - checkout
       - restore_cache:
@@ -26,7 +26,7 @@ jobs:
           path: test-results
   code-review:
     docker:
-      - image: circleci/node:latest
+      - image: alpine:3.15
     steps:
       - checkout
       - restore_cache:
@@ -47,7 +47,7 @@ jobs:
           path: sfdxScannerAnalysis.csv
   deploy-code:
     docker:
-      - image: circleci/node:latest
+      - image: alpine:3.15
     steps:
       - checkout
       - restore_cache:
@@ -68,15 +68,17 @@ jobs:
           name: Deploy to Org
           command: . build/deploy_code.sh
 workflows:
+
   version: 2
-  validate:
+    build:
     jobs:
-   
-      - build:
-         
+      - test:
+          filters:
             branches:
               only:
                 - main
+  validate:
+    jobs:
       - run-tests
       - code-review:
           requires:
