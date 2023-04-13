@@ -68,17 +68,15 @@ jobs:
           name: Deploy to Org
           command: . build/deploy_code.sh
 workflows:
-   build:
-    jobs:
-      - test:
-          filters:
-            branches:
-              only:
-                - main
+   
   version: 2
   validate:
     jobs:
       - run-tests
+      filters:
+            branches:
+              only: 
+              -main
       - code-review:
           requires:
             - run-tests
