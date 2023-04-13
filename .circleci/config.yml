@@ -68,7 +68,6 @@ jobs:
           name: Deploy to Org
           command: . build/deploy_code.sh
 workflows:
-build:
   version: 2
   validate:
     jobs:
@@ -79,4 +78,6 @@ build:
       - deploy-code:
           requires:
             - code-review
-          
+          filters:
+            branches:
+              only: main
