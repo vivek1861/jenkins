@@ -71,13 +71,16 @@ workflows:
   version: 2
   validate:
     jobs:
+      - build:
+          filters:
+            branches:
+              only: main
       - run-tests
       - code-review:
           requires:
             - run-tests
-            filters:
-            branches:
-              only: main
+
+
       - deploy-code:
           requires:
             - code-review
