@@ -79,6 +79,4 @@ workflows:
       - deploy-code:
           requires:
             - code-review
-           filters:
-            branches:
-              only: main
+          
