@@ -73,7 +73,6 @@ workflows:
   validate:
     jobs:
       - run-tests
-      
       - code-review:
           requires:
             - run-tests
