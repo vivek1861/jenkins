@@ -68,11 +68,10 @@ jobs:
           name: Deploy to Org
           command: . build/deploy_code.sh
 workflows:
-build:
-  version: 2
-     tagged-build:
+  build:
     jobs:
-      - build:
+      - test:
           filters:
-            tags:
-              only: -main
+            branches:
+              only:
+                - main
