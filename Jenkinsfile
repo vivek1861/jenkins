@@ -1,6 +1,5 @@
 #!groovy
 import groovy.json.JsonSlurperClassic
-Jenkinsfile (Declarative Pipeline)
 node {
 
     def BUILD_NUMBER=env.BUILD_NUMBER
